@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "4000:3000" # ローカルホストでバックエンドをポート5000で公開
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=example
+      - DATABASE_NAME=burndown_db
+    depends_on:
+      - db
+    networks:
+      - app-network
+    volumes:
+      - ./backend:/usr/src/app
+    command: bun run dev # bunを使って開発環境を起動
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000" # ローカルホストでフロントエンドをポート4000で公開
+    networks:
+      - app-network
+    volumes:
+      - ./frontend:/usr/src/app
+    depends_on:
+      - backend
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: burndown_db
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306" # ローカルホストでMySQLをポート3307で公開
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db-data:

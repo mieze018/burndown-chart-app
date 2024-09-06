@@ -2,6 +2,11 @@
   "name": "fromtend",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "start": "bun run start",
+    "dev": "bun run dev",
+    "build": "bun run build"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
