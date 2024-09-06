@@ -1,10 +1,6 @@
 {
   "name": "burndown-chart-app",
   "module": "index.ts",
-  "type": "module",
-  "scripts": {
-    "start": "bun run index.ts"
-  },
   "devDependencies": {
     "@types/bun": "^1.1.8",
     "bun-types": "latest"
@@ -12,7 +8,12 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
+  "scripts": {
+    "start": "bun run index.ts"
+  },
+  "type": "module",
   "dependencies": {
-    "express": "^4.19.2"
+    "eslint": "^9.9.1",
+    "prettier": "^3.3.3"
   }
 }
