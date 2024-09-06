@@ -1,6 +1,11 @@
 # burndown-chart-app
 
+## backend
+
+npm init adonisjs@latest backend -- --db=mysql --kit=api --auth-guard=access_tokens
+
 ## ディレクトリ構成
+
 ```mermaid
 graph LR
     A[root] --> B[docker-compose.yml]
@@ -66,5 +71,3 @@ graph LR
   - db（データベース: MySQL）
   - init.sql: 初期データベースセットアップ用のSQLスクリプト（テーブル作成、初期データ投入など）。
   - Dockerfile: MySQL用のDockerイメージを構築するファイル。
-
-
