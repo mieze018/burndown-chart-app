@@ -3,12 +3,16 @@
   "module": "index.ts",
   "devDependencies": {
     "@types/bun": "^1.1.8",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "cspell": "^8.14.2",
+    "prettier-edgejs": "^0.2.27"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "scripts": {
+    "cspell": "cspell lint '**'",
+    "prettier": "prettier --write .",
     "install:bk": "cd backend && npm install",
     "install:fr": "cd frontend && bun install",
     "dev:bk": "cd backend && npm run dev",
