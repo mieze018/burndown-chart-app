@@ -47,5 +47,8 @@
   "gitlens.currentLine.enabled": true,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.currentLine.pullRequests.enabled": true,
-  "vetur.validation.template": false
+  "vetur.validation.template": false,
+  "vetur.completion.tagCasing": "initial",
+  "vetur.validation.script": false,
+  "vetur.validation.style": false
 }

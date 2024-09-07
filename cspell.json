@@ -17,7 +17,11 @@
     "yml",
     "mdx"
   ],
-  "words": ["adonisjs", "nuxt"],
+  "words": [
+    "adonisjs",
+    "inertiajs",
+    "nuxt"
+  ],
   "ignorePaths": [
     "package.json",
     "package-lock.json",
