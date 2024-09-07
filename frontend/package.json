@@ -1,16 +1,17 @@
 {
-  "name": "frontend",
-  "module": "index.ts",
+  "name": "nuxt-app",
+  "private": true,
   "type": "module",
   "scripts": {
-    "start": "bun run start",
-    "dev": "bun run dev",
-    "build": "bun run build"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+  "dependencies": {
+    "nuxt": "^3.13.0",
+    "vue": "latest",
+    "vue-router": "latest"
   }
 }
