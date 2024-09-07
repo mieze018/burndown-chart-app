@@ -1,1 +1,51 @@
-{}
+{
+  // デフォルトはフォーマット無効化
+  "editor.formatOnSave": false,
+  // タブ幅を固定
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  // 各言語別にフォーマッターを設定
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[mdx]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // 最終行に空行が無ければ自動で入れる
+  "files.insertFinalNewline": true,
+  // 改行コード(LF)
+  "files.eol": "\n",
+  // 文字コード(UTF-8)
+  "files.encoding": "utf8",
+  // 行末のスペースを削除
+  "files.trimTrailingWhitespace": true,
+  // eslint
+  "eslint.format.enable": true,
+  // prettier
+  "prettier.enable": true,
+  // gitlens
+  "gitlens.currentLine.enabled": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.currentLine.pullRequests.enabled": true,
+  "vetur.validation.template": false
+}
