@@ -2,6 +2,7 @@
   "recommendations": [
     "exiasr.hadolint",
     "hridoy.adonisjs-snippets",
-    "nuxtr.nuxtr-vscode"
+    "nuxtr.nuxtr-vscode",
+    "github.vscode-github-actions"
   ]
 }
