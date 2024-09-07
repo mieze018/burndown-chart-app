@@ -9,7 +9,10 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "start": "bun run index.ts"
+    "install:bk": "cd backend && npm install",
+    "install:fr": "cd frontend && bun install",
+    "dev:bk": "cd backend && npm run dev",
+    "dev:fr": "cd frontend && bun dev"
   },
   "type": "module",
   "dependencies": {
