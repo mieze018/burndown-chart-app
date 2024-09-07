@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:import/recommended', '@adonisjs/eslint-config/app'],
+  extends: ['plugin:import/recommended', '@adonisjs/eslint-config/app'],
   rules: {
     // コンポーネントファイル名が単一単語でも許容する
     'vue/multi-word-component-names': 'off',
