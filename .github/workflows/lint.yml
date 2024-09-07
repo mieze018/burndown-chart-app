@@ -1,0 +1,53 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - develop
+      - fix/**
+      - feature/**
+      - hotfix/**
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      # フロントエンド
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: frontend/.bun
+          key: bun-cache-v1-${{ hashFiles('frontend/bun.lockb') }}
+          restore-keys: |
+            bun-cache-v1-
+            bun-cache-
+
+      - name: Install frontend dependencies
+        run: |
+          cd frontend
+          bun install
+
+      - name: Run linters in frontend
+        run: |
+          cd frontend
+          bun run lint

@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 
 # 依存関係をnpmでインストール
-RUN npm install@latest
+RUN npm install
 
 # @swc/coreのネイティブバインディングをインストール
 # RUN npm install @swc/core-linux-arm64-gnu

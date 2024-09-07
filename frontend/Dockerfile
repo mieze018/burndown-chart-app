@@ -1,28 +1,20 @@
-FROM node:22
+# ベースイメージとして Bun を使用
+FROM oven/bun:latest
 
-# bunをインストール
-RUN curl https://bun.sh/install | bash
-
-# パスにbunを追加
-ENV PATH="/root/.bun/bin:$PATH"
-
-# 作業ディレクトリを作成
+# 作業ディレクトリを設定
 WORKDIR /usr/src/app
 
-# package.json と bun.lockb をコピー
+# パッケージファイルをコピー
 COPY package.json bun.lockb ./
 
-# 依存関係をbunでインストール
+# 依存関係をインストール
 RUN bun install
 
 # アプリケーションのソースコードをコピー
 COPY . .
 
-# ビルドを実行（bunを使用）
+# アプリケーションをビルド
 RUN bun run build
 
-# 簡易サーバを起動（ローカル開発用）
-CMD ["bun", "run", "start"]
-
-# フロントエンドはポート3000を使用（コンテナ内部ではデフォルト）
-EXPOSE 3000
+# アプリケーションを実行
+CMD ["bun", "run", "preview"]
