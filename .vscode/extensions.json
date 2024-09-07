@@ -5,6 +5,7 @@
     "github.vscode-github-actions",
     "jripouteau.adonis-vscode-extension",
     "adonisjs.vscode-edge",
-    "jripouteau.japa-vscode"
+    "jripouteau.japa-vscode",
+    "selemondev.shadcn-vue"
   ]
 }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3'
+import Button from '~/components/ui/button/Button.vue'
 
 defineProps<{ version: number }>()
 </script>
@@ -14,5 +15,6 @@ defineProps<{ version: number }>()
       Learn more about AdonisJS and Inertia.js by visiting the
       <a href="https://docs.adonisjs.com/guides/inertia">AdonisJS documentation</a>.
     </span>
+    <Button>button</Button>
   </div>
 </template>
