@@ -3,6 +3,8 @@ FROM node:22 as base
 # # 作業ディレクトリを作成
 ARG WORKDIR_PATH=/usr/src/app
 
+ENV NODE_ENV=production
+
 # 作業ディレクトリを作成
 WORKDIR $WORKDIR_PATH
 
@@ -13,7 +15,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 # @swc/coreのネイティブバインディングをインストール
-# RUN npm install @swc/core-linux-arm64-gnu
+RUN npm install @swc/core-linux-arm64-gnu
 
 # アプリケーションのソースコードをコピー
 COPY . .
@@ -21,7 +23,7 @@ COPY . .
 # TypeScriptをコンパイル（npmを使用）
 RUN npm run build
 
-# コンテナを起動するコマンド
+# # コンテナを起動するコマンド
 CMD ["npm", "start"]
 
 EXPOSE 3333
