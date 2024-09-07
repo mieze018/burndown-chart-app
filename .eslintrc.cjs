@@ -10,6 +10,7 @@ module.exports = {
     //     ignore: ['^~icons/sp', '^~icons/material-symbols/', '^~icons/lucide/'],
     //   },
     // ],
+    'import/no-unresolved': 'off',
     'import/order': [
       'error',
       {
