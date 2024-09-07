@@ -2,7 +2,7 @@
 
 ## backend
 
-npm init adonisjs@latest backend -- --db=mysql --kit=api --auth-guard=access_tokens
+npm init adonisjs@latest backend -- --db=mysql --kit=api --auth-guard=session
 
 ## ディレクトリ構成
 
@@ -48,9 +48,9 @@ graph LR
 ```
 
 - backend（バックエンド: Express + TypeScript）
-  - src/controllers: 各エンドポイントの処理を担当するコントローラ。
+  - src/controllers: 各エンドポイントの処理を担当するコントローラー。
   - src/models: データベースモデル。MySQLと連携するために使用。
-  - src/routes: APIルーティング定義。各コントローラにルーティングします。
+  - src/routes: APIルーティング定義。各コントローラーにルーティングします。
   - src/services: ビジネスロジックやデータベースとのやり取りを行うサービス層。
   - src/middlewares: 認証やエラーハンドリングなど、共通の処理を行うミドルウェア。
   - src/config: 設定ファイルや環境変数を管理。
@@ -60,7 +60,7 @@ graph LR
   - Dockerfile: バックエンドのDockerイメージを構築するためのファイル。
   - package.json: バックエンドの依存関係を管理するファイル。
 - frontend（フロントエンド: React + TypeScript）
-  - public: 公開ディレクトリ。静的ファイル（favicon, index.html など）が含まれる。
+  - public: 公開ディレクトリ。静的ファイル（favicon, index.htmlなど）が含まれる。
   - src/components: フロントエンドのUIコンポーネント。
   - src/pages: 各ページ（ルーティングされるトップレベルのUI）。
   - src/styles: CSSやSassなどのスタイル関連ファイル。

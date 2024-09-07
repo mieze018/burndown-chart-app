@@ -1,5 +1,5 @@
 {
-  "name": "fromtend",
+  "name": "frontend",
   "module": "index.ts",
   "type": "module",
   "scripts": {

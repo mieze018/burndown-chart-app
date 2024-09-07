@@ -1,29 +1,24 @@
-# ベースイメージとしてNode.jsを使用（bunには公式イメージがないため、Nodeベースで対応）
-FROM node:18
-
-# bunをインストール
-RUN curl https://bun.sh/install | bash
-
-# パスにbunを追加
-ENV PATH="/root/.bun/bin:$PATH"
+FROM node:22
 
 # 作業ディレクトリを作成
 WORKDIR /usr/src/app
 
-# package.json と bun.lockb をコピー
-COPY package.json bun.lockb ./
+# package.json と package-lock.json をコピー
+COPY package.json package-lock.json ./
 
-# 依存関係をbunでインストール
-RUN bun install
+# 依存関係をnpmでインストール
+RUN npm install@latest
+
+# @swc/coreのネイティブバインディングをインストール
+# RUN npm install @swc/core-linux-arm64-gnu
 
 # アプリケーションのソースコードをコピー
 COPY . .
 
-# TypeScriptをコンパイル（bunを使用）
-RUN bun run build
+# TypeScriptをコンパイル（npmを使用）
+RUN npm run build
 
 # コンテナを起動するコマンド
-CMD ["bun", "run", "start"]
+CMD ["npm", "start"]
 
-# アプリケーションはデフォルトでポート3000で動作
 EXPOSE 3000

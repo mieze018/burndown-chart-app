@@ -1,4 +1,4 @@
-# fromtend
+# frontend
 
 To install dependencies:
 

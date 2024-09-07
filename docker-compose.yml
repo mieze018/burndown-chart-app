@@ -3,7 +3,7 @@ services:
     build:
       context: ./backend
     ports:
-      - "4000:3000" # ローカルホストでバックエンドをポート5000で公開
+      - "4000:3000"
     environment:
       - DATABASE_HOST=db
       - DATABASE_USER=root
@@ -15,17 +15,19 @@ services:
       - app-network
     volumes:
       - ./backend:/usr/src/app
-    command: bun run dev # bunを使って開発環境を起動
+      - /usr/src/app/node_modules
+    command: npm run dev
 
   frontend:
     build:
       context: ./frontend
     ports:
-      - "3000:3000" # ローカルホストでフロントエンドをポート4000で公開
+      - "3000:3000"
     networks:
       - app-network
     volumes:
       - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
     depends_on:
       - backend
 
@@ -37,7 +39,7 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     ports:
-      - "3306:3306" # ローカルホストでMySQLをポート3307で公開
+      - "3306:3306"
     networks:
       - app-network
 

@@ -1,0 +1,31 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "enabledLanguageIds": [
+    "css",
+    "erb",
+    "html",
+    "javascript",
+    "json",
+    "jsonnet",
+    "markdown",
+    "ruby",
+    "sass",
+    "scss",
+    "slim",
+    "vue",
+    "yml",
+    "mdx"
+  ],
+  "words": ["adonisjs"],
+  "ignorePaths": [
+    "package.json",
+    "package-lock.json",
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    "cspell.json",
+    "README.md"
+  ]
+}

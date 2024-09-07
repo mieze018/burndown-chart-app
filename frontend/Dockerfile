@@ -1,5 +1,4 @@
-# ベースイメージとしてNode.jsを使用（bunのためにNodeを使う）
-FROM node:18
+FROM node:22
 
 # bunをインストール
 RUN curl https://bun.sh/install | bash
