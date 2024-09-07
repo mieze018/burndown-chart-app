@@ -9,8 +9,10 @@ services:
       - DATABASE_USER=root
       - DATABASE_PASSWORD=example
       - DATABASE_NAME=burndown_db
+      - REDIS_HOST=redis
     depends_on:
       - db
+      - redis
     networks:
       - app-network
     volumes:
@@ -40,6 +42,14 @@ services:
       - db-data:/var/lib/mysql
     ports:
       - "3306:3306"
+    networks:
+      - app-network
+  redis:
+    image: redis:latest
+    environment:
+      TZ: /usr/share/zoneinfo/Asia/Tokyo
+    ports:
+      - "6379:6379"
     networks:
       - app-network
 
