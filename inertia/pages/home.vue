@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3'
-import Button from '~/components/ui/button/Button.vue'
+import { Link, Head } from '@inertiajs/vue3'
 
 defineProps<{ version: number }>()
 </script>
@@ -10,11 +9,8 @@ defineProps<{ version: number }>()
 
   <div class="container">
     <div class="title">AdonisJS {{ version }} x Inertia x Vue.js</div>
-
-    <span>
-      Learn more about AdonisJS and Inertia.js by visiting the
-      <a href="https://docs.adonisjs.com/guides/inertia">AdonisJS documentation</a>.
-    </span>
-    <Button>button</Button>
+    <div>
+      <Link href="/projects">Projects</Link>
+    </div>
   </div>
 </template>
