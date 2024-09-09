@@ -5,6 +5,7 @@ const addProject = () => {
 }
 import Button from '~/components/ui/button/Button.vue'
 import Input from '~/components/ui/input/Input.vue'
+import { ref } from 'vue'
 defineProps<{
   projects: Array<{ id: number; name: string }>
 }>()
