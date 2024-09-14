@@ -16,6 +16,13 @@
       "source.fixAll.eslint": "explicit"
     }
   },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
   "[vue]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -24,10 +31,6 @@
     }
   },
   "[mdx]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -47,5 +50,8 @@
   "gitlens.currentLine.enabled": true,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.currentLine.pullRequests.enabled": true,
-  "vetur.validation.template": false
+  "vetur.validation.template": false,
+  "vetur.completion.tagCasing": "initial",
+  "vetur.validation.script": false,
+  "vetur.validation.style": false
 }

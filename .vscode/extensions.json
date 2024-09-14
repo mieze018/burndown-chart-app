@@ -1,8 +1,12 @@
 {
   "recommendations": [
     "exiasr.hadolint",
-    "hridoy.adonisjs-snippets",
     "nuxtr.nuxtr-vscode",
-    "github.vscode-github-actions"
+    "github.vscode-github-actions",
+    "jripouteau.adonis-vscode-extension",
+    "adonisjs.vscode-edge",
+    "jripouteau.japa-vscode",
+    "selemondev.shadcn-vue",
+    "vue.volar"
   ]
 }
