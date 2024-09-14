@@ -6,6 +6,7 @@
     "jripouteau.adonis-vscode-extension",
     "adonisjs.vscode-edge",
     "jripouteau.japa-vscode",
-    "selemondev.shadcn-vue"
+    "selemondev.shadcn-vue",
+    "vue.volar"
   ]
 }
